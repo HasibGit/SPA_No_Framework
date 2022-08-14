@@ -1,37 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+html, 
 body {
-  --nav-width: 200px;
-  margin: 0 0 0 var(--nav-width);
-  font-family: 'Quicksand', sans-serif;
-  font-size: 18px;
+    height: 100%;
 }
 
-.nav {
-  position: fixed;
+#registration-container{
+  height: 100%;
+  width: 100%;
+  background-image: url(https://az-cdn.selise.biz/selisecdn/cdn/arc2/login/signup_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top-logo{
+  background-image: url(https://az-cdn.selise.biz/selisecdn/cdn/arc2/arc2-logo.svg);
+  width: 140px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.registration-header, .registration-body{
+  padding: 2% 5% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.registration-body{
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 12px;
+}
+
+.sign-up-link{
+  color: #008AF1;
+  font-weight: 700;
+}
+
+.registration-form{
+  background-color: white;
+  padding: 20px 48px;
+}
+
+.form-header{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.input-contain{
+  position: relative;
+  margin-top: 20px;
+}
+input{
+  height: 3.5rem;
+  width: 28rem;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+}
+
+.placeholder-text{
+  position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: var(--nav-width);
-  height: 100vh;
-  background: #222222;
+  right: 0;
+  border: 2.1px solid transparent;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
 }
 
-.nav__link {
-  display: block;
-  padding: 12px 18px;
+.text{
+  font-size: 0.98rem;
+  padding: 0 0.35rem;
+  background-color: transparent;
+  color: black;
+}
+
+input, .placeholder-text{
+  font-size: 0.98rem;
+  padding: 0 0.84rem;
+}
+
+input:focus{
+  outline: none;
+  border-color: #008AF1;
+}
+
+input:focus + .placeholder-text .text{
+  background-color: white;
+  font-size: 0.77rem;
+  color: black;
+  transform: translate(0, -170%);
+  border-color: #008AF1;
+  color: #008AF1;
+}
+
+.text{
+  transform: translate(0);
+  transition: transform 0.15s ease-out, font-size 0.15s ease-out, background-color 0.2s ease-out, color 0.15s ease-out;
+}
+
+input:focus + .placeholder-text .text, :not(input[value=""]) + .placeholder-text .text{
+  background-color: white;
+  font-size: 0.77rem;
+  color: black;
+  transform: translate(0, -170%);
+}
+
+input:focus + .placeholder-text .text{
+  border-color: #008AF1;
+  color: #008AF1;
+}
+
+.submit-btn{
+  width: 100%;
+  height: 47px;
+  text-align: center;
+  background-color: #008AF1;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.forgot-password-link{
+  font-size: 12.79px;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+  line-height: 16px;
+  color: #008AF1;
+  cursor: pointer;
   text-decoration: none;
-  color: #eeeeee;
-  font-weight: 500;
+  text-align: center;
 }
 
-.nav__link:hover {
-  background: rgba(255, 255, 255, 0.05);
+.forgot-password-link:hover{
+  text-decoration: underline;
 }
 
-#app {
-  margin: 2em;
-  line-height: 1.5;
-  font-weight: 500;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-a {
-  color: #009579;
+.oAuth-links{
+  display: flex;
+  flex-direction: row;
+}
+
+.oAuth-container{
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+}
+
+.oAuth-logo{
+  height: auto;
+  border: none;
+  
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+}
+
+.toolbar{
+  height: 64px;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  padding: 0 16px;
+  height: 57.59px;
+  margin-left: 50px;
+}
+
+.logo-icon{
+  max-width: 120px;
+  object-fit: contain;
+  height: 57.59px;
+  border: none;
+}
+
+.toolbar-menu-btn{
+  width: 24px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.my-acc-btn{
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 10px;
+  background-color: transparent;
+  height: 49px;
+  width: 187px;
+  padding: 4px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* DROPDOWN STYLES STARTS  */
+.dropdown{
+  width: 100%;
+  position: relative;
+}
+
+.dropdown *{
+  box-sizing: border-box;
+}
+
+.select{
+  background: transparent;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px white solid;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* padding: 16px 16px; */
+  height: 64px;
+  padding: 0 5px;
+}
+
+.select-clicked{
+  /* border: 2px #26489a solid; */
+  /* box-shadow: 0 0 0.3em #26489a; */
+}
+
+.select:hover{
+  background: #f3f3f3;
+}
+
+.caret{
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid black;
+  transition: 0.3s;
+}
+
+.caret-rotate{
+  transform: rotate(180deg);
+}
+
+.menu{
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: transparent;
+  border: none;
+  box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+  border-radius: 0.5em;
+  color: black;
+  position: absolute;
+  top: 5em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li{
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover{
+  background: #f3f3f3;
+}
+
+.active{
+  background: #32342a;
+}
+
+.menu-open{
+  display: block;
+  opacity: 1;
+}
+
+.flag{
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}
+
+/* DROPDOWN STYLES ENDS  */
+
+.my-apps{
+  padding: 32px;
+  width: 400px;
+}
+
+.app{
+  flex-basis: 33.3%;
+  padding: 12px;
+}
+
+.app:hover{
+  color: #008AF1;
 }
