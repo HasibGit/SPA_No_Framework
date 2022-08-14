@@ -53,40 +53,54 @@ document.addEventListener('DOMContentLoaded', ()=>{
   router();
 })
 
-let input_element = document.querySelectorAll("input");
+window.addEventListener("DOMContentLoaded", function() {
 
-input_element.addEventListener("keyup", () => {
-    input_element.setAttribute("value", input_element.value);
-})
+  let input_elements = document.querySelectorAll("input");
 
-const dropdowns = document.querySelectorAll('.dropdown');
+  if(input_elements.length > 0){
 
-dropdowns.forEach(dropdown=>{
-  const select = dropdown.querySelector('.select');
-  // const caret = dropdown.querySelector('.caret');
-  const menu = dropdown.querySelector('.menu');
-  const options = dropdown.querySelectorAll('.menu li');
-  // const selected = dropdown.querySelector('.selected');
-
-  select.addEventListener('click', ()=>{
-    select.classList.toggle('select-clicked');
-    // caret.classList.toggle('caret-rotate');
-    menu.classList.toggle('menu-open');
-  })
-
-  options.forEach(option=> {
-    option.addEventListener('click', ()=>{
-      console.log('here');
-      // selected.innerText = option.innerText;
-      select.classList.remove('select-clicked');
-      // caret.classList.remove('caret-rotate');
-      menu.classList.remove('menu-open');
-      
-      // options.forEach(option=>{
-      //   option.classList.remove('active');
-      // })
-
-      // option.classList.add('active');
+    input_elements.forEach(inputElement=>{
+      inputElement.addEventListener("keyup", () => {
+        inputElement.setAttribute("value", inputElement.value);
     })
-  })
-})
+    })
+  }
+
+
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  if(dropdowns.length > 0){
+    dropdowns.forEach(dropdown=>{
+      const select = dropdown.querySelector('.select');
+      // const caret = dropdown.querySelector('.caret');
+      const menu = dropdown.querySelector('.menu');
+      const options = dropdown.querySelectorAll('.menu li');
+      // const selected = dropdown.querySelector('.selected');
+    
+      select.addEventListener('click', ()=>{
+        select.classList.toggle('select-clicked');
+        // caret.classList.toggle('caret-rotate');
+        menu.classList.toggle('menu-open');
+      })
+    
+      options.forEach(option=> {
+        option.addEventListener('click', ()=>{
+          console.log('here');
+          // selected.innerText = option.innerText;
+          select.classList.remove('select-clicked');
+          // caret.classList.remove('caret-rotate');
+          menu.classList.remove('menu-open');
+          
+          // options.forEach(option=>{
+          //   option.classList.remove('active');
+          // })
+    
+          // option.classList.add('active');
+        })
+      })
+    })
+  }
+
+
+}, false);
+

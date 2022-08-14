@@ -125,6 +125,8 @@ input:focus + .placeholder-text .text{
 }
 
 .submit-btn{
+  display: block;
+  text-decoration: none;
   width: 100%;
   height: 47px;
   text-align: center;

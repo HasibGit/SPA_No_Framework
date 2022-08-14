@@ -35,7 +35,7 @@ export default class extends AbstractView {
         </div>
 
         <div class="input-contain">
-          <a type="button" class="submit-btn" href="/home" data-link>Sign In</a>
+        <a type="button" class="submit-btn" href="/home" data-link><span style="line-height: 47px;">Sign In</span></a>
         </div>
 
         <div class="input-contain" style="text-align: center;"> 
